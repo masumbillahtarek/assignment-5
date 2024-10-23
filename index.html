@@ -50,7 +50,7 @@
     </span> </h2>
     <p class="text-center text-xl text-white">Yes, you can run unit tests and view the results directly within the app. The <br> integrated testing features allow for a streamlined .</p>
     <div class="flex justify-center mt-10 mb-[90px]">
-        <button class="border-solid border-2 border-[#1DD100] bg-[#1DD100] rounded-xl px-4 py-2 text-black font-bold">Buy Tickets</button>
+        <button  class="border-solid border-2 border-[#1DD100] bg-[#1DD100] rounded-xl px-4 py-2 text-black font-bold">Buy Tickets</button>
     </div>
     <div class="flex justify-center gap-10">
         <div class="flex gap-2 items-center border-b-4 border-[#1DD100] bg-white rounded-xl p-6">
@@ -191,26 +191,26 @@
             <div class="seat">
                <div class="seat-part">
                 <span>A</span>
-                <p>A1</p>
-                <p>A2</p>
+                <p onclick="bookTicket(element)"  id="A1">A1</p>
+                <p onclick="bookTicket()">A2</p>
                </div>
                 <div class="seat-part">
-                    <p>A3</p>
-                <p>A4</p>
+                    <p onclick="bookTicket()">A3</p>
+                <p onclick="bookTicket()">A4</p>
                 </div>
             </div>
-            <div class="seat">
+            <div class="seat ">
                 <div class="seat-part">
                  <span>B</span>
-                 <p>B1</p>
-                 <p>B2</p>
+                 <p onclick="bookTicket(this)">B1</p>
+                 <p onclick="bookTicket(this)">B2</p>
                 </div>
                  <div class="seat-part">
-                     <p>B3</p>
-                 <p>B4</p>
+                     <p onclick="bookTicket(this)">B3</p>
+                 <p onclick="bookTicket(this)">B4</p>
                  </div>
              </div>
-             <div class="seat">
+             <div class="seat ">
                 <div class="seat-part">
                  <span>C</span>
                  <p>C1</p>
@@ -221,7 +221,7 @@
                  <p>C4</p>
                  </div>
              </div>
-             <div class="seat">
+             <div class="seat ">
                 <div class="seat-part">
                  <span>D</span>
                  <p>D1</p>
@@ -232,7 +232,7 @@
                  <p>D4</p>
                  </div>
              </div>
-             <div class="seat">
+             <div class="seat ">
                 <div class="seat-part">
                  <span>E</span>
                  <p>E1</p>
@@ -243,7 +243,7 @@
                  <p>E4</p>
                  </div>
              </div>
-             <div class="seat">
+             <div class="seat ">
                 <div class="seat-part">
                  <span>F</span>
                  <p>F1</p>
@@ -254,7 +254,7 @@
                  <p>F4</p>
                  </div>
              </div>
-             <div class="seat">
+             <div class="seat ">
                 <div class="seat-part">
                  <span>G</span>
                  <p>G1</p>
@@ -265,7 +265,7 @@
                  <p>G4</p>
                  </div>
              </div>
-             <div class="seat">
+             <div class="seat ">
                 <div class="seat-part">
                  <span>H</span>
                  <p>H1</p>
@@ -276,7 +276,7 @@
                  <p>H4</p>
                  </div>
              </div>
-             <div class="seat">
+             <div class="seat ">
                 <div class="seat-part">
                  <span>I</span>
                  <p>I1</p>
@@ -287,7 +287,7 @@
                  <p>I4</p>
                  </div>
              </div>
-             <div class="seat">
+             <div class="seat ">
                 <div class="seat-part">
                  <span>J</span>
                  <p>J1</p>
@@ -318,7 +318,7 @@
                         </div>
                     </div>
                     <hr>
-                    <div class="flex justify-between mt-6">
+                  <div class="flex justify-between mt-6">
                         <div class="flex gap-2 items-center">
                             <p class="text-xl">C2</p>
                         </div>
@@ -329,7 +329,7 @@
                             <p class="text-xl">550</p>
                         </div>
                     </div>
-                    <div class="flex justify-between mt-6">
+        <div class="flex justify-between  mt-6">
                         <div class="flex gap-2 items-center">
                             <p class="text-xl">C2</p>
                         </div>
@@ -360,8 +360,8 @@
                         <div>
                             <p class="text-xl font-bold">BDT 1100</p>
                         </div>
-                    </div>
-
+                    </div>         
+            <!--<div id="info">No seats selected yet. Total Price: $0</div>-->        
 
                 </div> 
                 <form action="" class="mt-4">
@@ -374,8 +374,29 @@
                     <label for=""><span class="text-xl font-bold ">Email ID</span>
                         <input type="email" placeholder="Enter your email id" class="w-full py-4 rounded-xl px-8 my-2">
                     </label>
-                    <input type="button" value="Next" class="bg-[#1DD100] text-white font-bold w-full py-4 rounded-xl my-2">
+                
                 </form>
+                <div>
+                    <!-- Open the modal using ID.showModal() method -->
+            <button class="btn bg-[#1DD100] text-white font-bold w-full py-4 rounded-xl my-2" onclick="my_modal_1.showModal()">Next</button>
+            <dialog id="my_modal_1" class="modal">
+              <div class="modal-box">
+               <div class="flex justify-center"> <img src="images/success.png" alt=""></div>
+                <h3 class="text-lg font-bold text-center">SUCCESS</h3>
+                <p class=" text-center font-bold">Thank you for Booking Our Bus Seats. </p>
+                <p class="text-center font-bold">We are working hard to find the best service and deals for you. </p>
+                <p class="text-center">Shortly you will find a confirmation in your email.</p>
+                <div class="modal-action">
+                  <form method="dialog " >
+                    <!-- if there is a button in form, it will close the modal -->
+                    
+                        <button class="btn bg-[#1DD100] text-white font-bold  py-4 rounded-xl my-2">Continue</button>
+                    
+                  </form>
+                </div>
+              </div>
+            </dialog>
+                </div>
             </div>
         </div>
     </div>
@@ -389,7 +410,7 @@
             </div>
             <div>
                 <h6 class="text-xl font-bold text-white">Download our app</h6>
-                <div class="flex gap-2 items-center mt-4">
+                <div class="flex gap-2 items-center mt-4 border-2 border-white rounded-xl p-2">
                     <div><img src="images/playstore.png" alt=""></div>
                     <div>
                         <p class="text-[12px]  text-white">Get on it</p>
@@ -412,5 +433,7 @@
             </div>
         </div>
     </footer>
+ 
+    <script src="script/main.js"></script>
 </body>
 </html>

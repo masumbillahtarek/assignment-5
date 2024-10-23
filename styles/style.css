@@ -16,6 +16,7 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    gap: 12px;
 }
 .seat-part{
     display: flex;
@@ -24,7 +25,14 @@
 }
 .seat-part>p{
     background-color: #0307121A;
-   padding: 8px 30px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 40px;
+  
+  
    border-radius: 12px;
 
 }
